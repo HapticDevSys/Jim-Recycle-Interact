@@ -1,3 +1,15 @@
+
+# Jim-Recycle Modified
+
+Full Credits to https://github.com/jimathy/jim-recycle for the script.
+
+Modifications Made:
+- Changed all Targetting to use Interact Instead
+- Modified server side sale code, to avoid looping over so many items and removing one by one.
+
+My Discord:
+https://discord.gg/TE2tR7GTPk
+
 # jim-recycle
 FiveM Custom QBCORE recycling script made by me from scratch
 
