@@ -32,6 +32,7 @@ Config = {
 	},
 	DumpsterDiving = {
 		Enable = true,
+		DumpsterStashes = false, --If set to true, dumpsters will act as stashes. (MUST HAVE HAPTICLIB https://hapticdev-productions.tebex.io/package/6471980)
 		searched = { }, -- No Touch
 		skillcheck = "ps-ui", --"qb-lock", "ps-ui", "qb-skillbar", "ox_lib", nil
 		models = { -- The mighty list of dumpters/trash cans

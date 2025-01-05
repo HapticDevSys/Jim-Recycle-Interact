@@ -2,10 +2,14 @@
 # Jim-Recycle Modified
 
 Full Credits to https://github.com/jimathy/jim-recycle for the script.
+Credits to Discord user: vosscat for the Dumpster Stash Idea.
+
+Interact Link: https://github.com/HapticDevSys/Interact
 
 Modifications Made:
 - Changed all Targetting to use Interact Instead
 - Modified server side sale code, to avoid looping over so many items and removing one by one.
+- Added Toggle to set dumsters to Stash's instead (Note if the Trashcan moves it will open a different stash, these stash's are persistent)
 
 My Discord:
 https://discord.gg/TE2tR7GTPk

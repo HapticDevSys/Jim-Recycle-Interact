@@ -1,3 +1,5 @@
+function getCoord(numA, numB) local base = 10^(numB or 0) return math.floor(numA * base + 0.5) / base end
+
 if Config.DumpsterDiving.Enable then if Config.Debug then print("^5Debug^7: ^2Loading^7: '^6Dumpster Diving^7'") end
     local Searching = false -- No touch
     --Dumpster Third Eye
@@ -12,7 +14,17 @@ if Config.DumpsterDiving.Enable then if Config.Debug then print("^5Debug^7: ^2Lo
                 {
                     label = Loc[Config.Lan].target["search_trash"],
                     action = function(entity, coords, args)
-                        TriggerEvent("jim-recycle:Dumpsters:Search", { entity = entity })
+                        if Config.DumpsterDiving.DumpsterStashes then
+                            local DumpsterCoords = GetEntityCoords(entity)
+                            if DumpsterCoords.x < 0 then DumpsterX = -DumpsterCoords.x else DumpsterX = DumpsterCoords.x end
+                            if DumpsterCoords.y < 0 then DumpsterY = -DumpsterCoords.y else DumpsterY = DumpsterCoords.y end
+                            DumpsterX = getCoord(DumpsterX, 1)
+                            DumpsterY = getCoord(DumpsterY, 1)
+                            local stashid = "Dumpster_"..DumpsterX.."_"..DumpsterY
+                            TriggerServerEvent("HapticLib:Server:DynamicStash", stashid, 10, 100000, "DumpsterStash")
+                        else
+                            TriggerEvent("jim-recycle:Dumpsters:Search", { entity = entity })
+                        end
                     end,
                 },
             }
